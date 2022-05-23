@@ -1,21 +1,39 @@
 // TODO: Write your function in this file
 
-function fizzBuzz(lower, upper) {
+// With Steve extension from morning exercises.
+
+const values = {
+    firstNum: {
+        value: 3,
+        string: "Fizz"
+    },
+
+    secondNum: {
+        value: 5,
+        string: "Buzz"
+    },
+
+    firstAndSecond: {
+        string: "FizzBuzz"
+    }
+}
+
+const fizzBuzz = (lower, upper) => {
 
     const fizzBuzzArray = [];
 
     for (let i = lower; i <= upper; i++) {
 
-    if (i % 3 === 0 && i % 5 !== 0) {
-        fizzBuzzArray.push("Fizz")
+    if (i % values.firstNum.value === 0 && i % values.secondNum.value !== 0) {
+        fizzBuzzArray.push(values.firstNum.string)
     }
 
-    else if (i % 5 === 0 && i % 3 !== 0) {
-        fizzBuzzArray.push("Buzz")
+    else if (i % values.secondNum.value === 0 && i % values.firstNum.value !== 0) {
+        fizzBuzzArray.push(values.secondNum.string)
     }
 
-    else if (i % 3 === 0 && i % 5 === 0) {
-        fizzBuzzArray.push("FizzBuzz")
+    else if (i % values.firstNum.value === 0 && i % values.secondNum.value === 0) {
+        fizzBuzzArray.push(values.firstAndSecond.string)
     }
 
     else {
@@ -24,7 +42,7 @@ function fizzBuzz(lower, upper) {
 
 }
 
-    return fizzBuzzArray;
+ return fizzBuzzArray;
 
 }
 
